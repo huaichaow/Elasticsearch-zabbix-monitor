@@ -27,7 +27,7 @@
 ##################################################################################
 set -e
 
-declare -r FILE_DIR="./es_mon.conf"
+declare -r FILE_DIR="$(dirname $(readlink -f $0))/es_mon.conf"
 function discovery_es_key(){	
 	local item=$1
     	local eskeyarray=(`cat $FILE_DIR|grep $item`)
